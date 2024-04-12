@@ -1,4 +1,5 @@
 venv
 *diagrama*
 *cache*
-.db
+.sqlite3
+.vscode
