@@ -12,7 +12,9 @@ class DayOfWeek(models.TextChoices):
 
 
 class Routine(models.Model):
-    day_of_week = models.CharField(max_length=15, choices=DayOfWeek.choices)
+    day_of_week = models.CharField(
+        max_length=15, choices=DayOfWeek.choices, unique=True
+    )
     gym_student = models.ForeignKey(
         "gym_students.GymStudent", on_delete=models.CASCADE, related_name="routine"
     )
