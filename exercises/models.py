@@ -6,6 +6,7 @@ class Exercise(models.Model):
     number_of_sets = models.IntegerField(default=4)
     number_of_reps_per_set = models.IntegerField(default=12)
     load = models.IntegerField()
-    routine = models.ForeignKey(
-        "routines.Routine", on_delete=models.CASCADE, related_name="exercise"
+    routine = models.ManyToManyField(
+        "routines.Routine",
+        related_name="exercises",
     )
